@@ -11,7 +11,9 @@ Python script to quickly sort through armor in Destiny 2 using Destiny Item Mana
   
   Click on Armor
   
-  And Save and Move file to location of the python script
+  Save file as DestinyArmor.csv
+  
+  Move file to location of the python script
   
   Run the Script
   
