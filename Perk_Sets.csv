@@ -1,0 +1,34 @@
+#Comments can be added using a # as the 1st character
+#You can add as many perks as you would like seperated by a comma
+#The script will only mark as a favorite IF ALL PERKS MATCH in the row
+Pump Action,Shotgun Reserves
+Remote Connection,Sniper Rifle Reserves
+Light Reactor,Fusion Rifle Reserves
+Light Reactor,Heavy Lifting,Machine Gun Reserves
+Enhanced Heavy Lifting,Machine Gun Reserves
+Precision Weapon Targeting,Sniper Rifle Reserves
+Enhanced Hand Cannon Loader,Sniper Rifle Scavenger
+Enhanced Hand Cannon Loader,Fusion Rifle Scavenger
+Enhanced Hand Cannon Loader,Shotgun Scavenger
+Light Arms Loader,Sniper Rifle Scavenger
+Light Arms Loader,Fusion Rifle Scavenger
+Light Arms Loader,Shotgun Scavenger
+Rifle Loader,Sniper Rifle Scavenger
+Rifle Loader,Fusion Rifle Scavenger
+Rifle Loader,Shotgun Scavenger
+Large Arms Loader,Sniper Rifle Scavenger
+Large Arms Loader,Fusion Rifle Scavenger
+Large Arms Loader,Shotgun Scavenger
+Unflinching Light Arms Aim,Special Ammo Finder
+Unflinching Rifle Aim,Special Ammo Finder
+Unflinching Large Arms,Special Ammo Finder
+Traction,Hand Cannon Scavenger
+Light Arms Dexterity,Hand Cannon Scavenger
+Rifle Dexterity,Pulse Rifle Scavenger
+Oversize Weapon Dexterity,Hand Cannon Scavenger
+Sniper Rifle Reserves,Sniper Rifle Scavenger
+Fusion Rifle Reserves,Fusion Rifle Scavenger
+Shotgun Reserves,Shotgun Scavenger
+Grenade Launcher Reserves,Grenade Launcher Scavenger
+Machine Gun Reserves,Machine Gun Scavenger
+Rocket Launcher Reserves,Rocket Launcher Scavenger
