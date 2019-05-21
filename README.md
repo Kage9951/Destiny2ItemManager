@@ -16,18 +16,22 @@ Another thing to note about perks. In DIM the following are an example of what i
 This includeds shaders and mods if that interesets you. (I used Riven's Curse as a perk to make sure I always have a full set of revire dawn).
 
 # Usage
-
-  Using Destiny Item Manager(https://app.destinyitemmanager.com/)
+  Youtube Link: <will go here once I make it>
   
-  Go to Settings (Gear Icon)
+  Required Items:
   
-  Go all the way down to Spreadsheets
-  
-  Click on Armor
-  
-  Save file as DestinyArmor.csv
-  
-  Move file to location of the python script
+    From Github grab the following
+      Perk_Sets.CSV
+      RecommendPerks.CSV
+      Destiny2ItemManager.py
+     
+    Using Destiny Item Manager(https://app.destinyitemmanager.com/)
+      Go to Settings (Gear Icon)
+      Go all the way down to Spreadsheets
+      Click on Armor
+      Save file as DestinyArmor.csv
+    
+    Move file to location of the python script
   
   Run the Script
   
