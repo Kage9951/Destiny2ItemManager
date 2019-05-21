@@ -18,9 +18,11 @@ This includeds shaders and mods if that interesets you. (I used Riven's Curse as
 Last thing is that you can manually mark gear as favorite and the script will leave those items untouched.
 
 # Usage
-  Youtube Link: <will go here once I make it>
+    Youtube Link: will go here once I make it
   
-  Required Items:
+    Required Items:
+      python3 (https://www.python.org/)
+      Destiny Item Manager(https://app.destinyitemmanager.com/)
   
     From Github grab the following
       Perk_Sets.csv
@@ -28,7 +30,7 @@ Last thing is that you can manually mark gear as favorite and the script will le
       Destiny2ItemManager.py
       Save these in the same folder
      
-    Using Destiny Item Manager(https://app.destinyitemmanager.com/)
+    Using DIM
       Go to Settings (Gear Icon)
       Go all the way down to Spreadsheets
       Click on Armor
