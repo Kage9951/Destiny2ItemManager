@@ -7,6 +7,8 @@ This script uses tags from Destiny Item Manager (DIM) to mark what gear to keep.
 
 The second part then goes through and finds any defined Perk Sets and marks them as 'favorite'. Perk Sets are sets of perks that YOU define. The script will look for any armor that matches ALL of the defined perks. This allows you to explictly put any of YOUR god rolls. An example for me would be this for my gloves: \[Enhanced Grenade Launcher Loader, Light Arms Loader, Rifle Loader, Shotgun Scavenger, Sniper Scavenger\]. If that happened to be in my vault that gear would be marked as 'favorite'.
 
+The last part goes through untagged armor and marks any that is currently at max power gets marked as 'infuse'. This allows you to keep junk gear to infuse into you gear that you want to be max power. Max Power will need to be changed manually every season.
+
 For me this has reduced my vault entirely to 146 pieces of Legendary Armor across ALL my characters. And has been a life saver in terms of time spent looking through my vault.
 
 Another thing to note about perks. In DIM the following are an example of what is defined as a perk: 
