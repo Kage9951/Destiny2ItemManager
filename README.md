@@ -15,7 +15,7 @@ Another thing to note about perks. In DIM the following are an example of what i
 
 \[Heavy Hunter Armor*,Plasteel Reinforcement Mod,Restorative Mod*,Paragon Mod*,Masterwork*,Mercury Vex Chrome*,Ashes to Assets,Pump Action*,Remote Connection,Rocket Launcher Reserves,Shotgun Reserves*\]
 
-This includeds shaders and mods if that interesets you. (I used Riven's Curse as a perk to make sure I always have a full set of revire dawn).
+This includeds shaders and mods if that interesets you. (I used Riven's Curse as a perk to make sure I always have a full set of Reverie Dawn).
 
 Last thing is that you can manually mark gear as favorite and the script will leave those items untouched.
 
