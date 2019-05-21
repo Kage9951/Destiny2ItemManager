@@ -49,9 +49,9 @@ Last thing is that you can manually mark gear as favorite and the script will le
       Drag 'DestinyArmorExport.csv' to the drag and drop box in DIM to import it
       It will say X amount of items updated
       
-      From here to mass get rid of gear I use the following query.
-        is:armor -is:exotic tag:none
-        Click on the down arrow on the character you are on
-        Click Transfer Search
-        This will move all items left untagged (items to delete) to that character
-        Simply delete items and wait for DIM to refresh and repeat until all unwanted items are gone.
+    From here to mass get rid of gear I use the following query.
+      is:armor -is:exotic tag:none
+      Click on the down arrow on the character you are on
+      Click Transfer Search
+      This will move all items left untagged (items to delete) to that character
+      Simply delete items and wait for DIM to refresh and repeat until all unwanted items are gone.
