@@ -1,4 +1,5 @@
 import csv
+import os
 
 
 class Armor:
@@ -74,24 +75,25 @@ class Perk:
         return self._item[key] < self._min
 
 
+os.chdir(os.path.dirname(__file__))
 # Get data from CSVs
 # Get Perk Sets from CSV
 perk_sets = []
-with open('Destiny_Item_Manager/Perk_Sets.csv') as csvfile:
+with open('Perk_Sets.csv') as csvfile:
     data = csv.reader(csvfile)
     for row in data:
         if row[0][0] != '#':
             perk_sets.append(PerkSets(row))
 perks = []
 # Get Perks from CSV
-with open('Destiny_Item_Manager/RecommendedPerks.csv') as csvfile:
+with open('RecommendedPerks.csv') as csvfile:
     data = csv.reader(csvfile)
     for row in data:
         if row[0][0] != '#':
             perks.append(Perk(row[0], int(row[1]), int(row[2])))
 # Get Armor from CSV
 armor = []
-with open('Destiny_Item_Manager/destinyArmor.csv') as csvfile:
+with open('destinyArmor.csv') as csvfile:
     data = csv.reader(csvfile)
     for row in data:
         if (row[4] != 'Exotic'):
@@ -176,7 +178,7 @@ for perk_set in perk_sets:
     print(f"{perk_set._perks}{' '*x} || {perk_set._count}")
 
 # Export CSV
-with open('Destiny_Item_Manager/DestinyArmorExport.csv', 'w') as csvfile:
+with open('DestinyArmorExport.csv', 'w') as csvfile:
     data = csv.writer(csvfile)
     for arm in armor:
         data.writerow([arm.name,
