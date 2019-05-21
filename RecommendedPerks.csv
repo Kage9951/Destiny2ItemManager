@@ -1,62 +1,63 @@
 #Comments can be added using a # as the 1st character
 #Format is:
 #<Perk Name>,<Minimum Items with Perk to keep>
-#Min items to keep is broken with latest update and will keep 1 at min
 #Helmet
-Precision Weapon Targeting,2
-Enhanced Bow Targeting,2
-Enhanced Hand Cannon Targeting,2
-Enhanced Linear Fusion Targeting,2
-Enhanced Sniper Rifle Targeting,2
-Enhanced Ashes to Assets,2
-Enhanced Heavy Lifting,2
-Light Reactor,2
-Pump Action,2
-Remote Connection,2
+Precision Weapon Targeting,2,1
+Enhanced Bow Targeting,2,1
+Enhanced Hand Cannon Targeting,2,1
+Enhanced Linear Fusion Targeting,2,1
+Enhanced Sniper Rifle Targeting,2,1
+Enhanced Ashes to Assets,2,2
+Enhanced Heavy Lifting,2,2
+Light Reactor,2,2
+Pump Action,2,2
+Remote Connection,2,2
 #Gauntlets
-Rifle Loader,2
-Light Arms Loader,2
-Enhanced Hand Cannon Loader,2
-Enhanced Shotgun Loader,2
-Enhanced Grenade Launcher Loader,2
-Enhanced Rocket Launcher Loader,2
-Enhanced Impact Induction,2
-Enhanced Momentum Transfer,2
+Rifle Loader,2,2
+Light Arms Loader,2,3
+Enhanced Hand Cannon Loader,2,2
+Enhanced Shotgun Loader,2,1
+Enhanced Grenade Launcher Loader,2,1
+Enhanced Rocket Launcher Loader,2,1
+Enhanced Impact Induction,2,1
+Enhanced Momentum Transfer,2,1
 #Chest Armor
-Unflinching Rifle Aim,2
-Enhanced Unflinching Sniper Aim,2
-Enhanced Unflinching Linear Fusion Aim,2
-Enhanced Unflinching Scout Rifle Aim,2
-Unflinching Light Arms Aim,2
-Unflinching Large Arms,2
-Enhanced Unflinching Bow Aim,2
+Unflinching Rifle Aim,2,3
+Enhanced Unflinching Sniper Aim,2,2
+Enhanced Unflinching Linear Fusion Aim,2,1
+Enhanced Unflinching Scout Rifle Aim,2,1
+Unflinching Light Arms Aim,2,2
+Unflinching Large Arms,2,1
+Enhanced Unflinching Bow Aim,2,1
 #Leg Armor
-Enhanced Bomber,2
-Distribution,2
-Dynamo,2
-Traction,2
-Light Arms Dexterity,2
-Enhanced Hand Cannon Dexterity,2
-Rifle Dexterity,2
-Enhanced Sniper Rifle Dexterity,2
-Oversize Weapon Dexterity,2
-Enhanced Rocket Launcher Dexterity,2
-Enhanced Shotgun Dexterity,2
+Enhanced Bomber,2,2
+Distribution,2,3
+Dynamo,2,2
+Traction,2,1
+Light Arms Dexterity,2,1
+Enhanced Hand Cannon Dexterity,2,1
+Rifle Dexterity,2,1
+Enhanced Sniper Rifle Dexterity,2,1
+Oversize Weapon Dexterity,2,1
+Enhanced Rocket Launcher Dexterity,2,1
+Enhanced Shotgun Dexterity,2,1
 #Class Item
-Absolution,2
+Absolution,2,1
 #Secondary Perks
-Fusion Rifle Scavenger,2
-Grenade Launcher Scavenger,2
-Linear Fusion Rifle Scavenger,2
-Machine Gun Scavenger,2
-Rocket Launcher Scavenger,2
-Shotgun Scavenger,2
-Sniper Rifle Scavenger,2
-Heavy Ammo Finder,2
+Fusion Rifle Scavenger,2,2
+Grenade Launcher Scavenger,2,2
+Linear Fusion Rifle Scavenger,2,1
+Machine Gun Scavenger,2,1
+Rocket Launcher Scavenger,2,1
+Shotgun Scavenger,2,2
+Sniper Rifle Scavenger,2,2
+Heavy Ammo Finder,2,1
+Sniper Rifle Reserves,1,1
+Shotgun Reserves,1,1
 #Intrinsics
-Reaper +3,1
-Invader +3,1
-Sentry +3,1
-Collector +3,1
+Reaper +3,1,1
+Invader +3,1,1
+Sentry +3,1,1
+Collector +3,1,1
 #Mods
-Riven's Curse,1
+Riven's Curse,1,1
