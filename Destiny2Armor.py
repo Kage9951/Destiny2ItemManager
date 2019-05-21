@@ -3,24 +3,34 @@ import csv
 
 class Armor:
     def __init__(self):
-        self.perks = []
-        self.name = ''
-        self.total_rec_perks = 0
+        self.perks = []  # Array to store perks
+        self.name = ''  # init with blank name
+        self.total_rec_perks = 0  # Total amount of Rec perks
 
     def Check_Perks(self, perk):
-        for x in self.perks:
-            if perk.lower() == x.lower():
-                return 1
-        return 0
+        for x in self.perks:  # Loop through perks on armor
+            if perk.lower() == x.lower():  # If matches input
+                return 1  # return true
+        return 0  # Otherwise return false
 
-    def Print_RecPerks(self, perks):
-        print(f" -{self.name}")
+    def Get_Total_Rec_Perks(self, perks):
+        for perk in perks:  # Loop through array of perks from input
+            if self.Check_Perks(perk.perk):  # Check for a match
+                self.total_rec_perks += perk.weight  # increase total by weight
+                # Adding a weight system to Rec Perks
+                # Ex. Remote Connection, Pump Action has a weight of 2
+                #    Precision Weapon Targeting, Ashes to Assets has a weight of 1
+                #    Add the weight to self.total_rec_perks to prioritize what perks are wanted
+                #    So a helm with Remote Connection, Pump Action is better than a helm with Remote Connection, Ashes to Assets
+
+    def Print_RecPerks(self, perks):  # Just a function to print out armor and its rec perks
+        print(f" -{self.equippable}: {self.name}")
         for perk in perks:
             if self.Check_Perks(perk.perk):
                 print(f"    {perk.perk}")
 
 
-class PerkSets:
+class PerkSets:  # Allows for Custom Perks sets. May be replaced by weight system.
     def __init__(self, x):
         self._perks = x
         self._count = 0
@@ -41,10 +51,11 @@ class PerkSets:
 
 
 class Perk:
-    def __init__(self, p, m):
+    def __init__(self, p, m, w):
         self.perk = p
         self.total = 0
         self._min = 1
+        self.weight = w
         self._item = {}
         for x in ['Hunter', 'Warlock', 'Titan']:
             for y in ['Helmet', 'Gauntlets', 'Chest Armor', 'Leg Armor']:
@@ -64,6 +75,20 @@ class Perk:
 
 
 # Get data from CSVs
+# Get Perk Sets from CSV
+perk_sets = []
+with open('Destiny_Item_Manager/Perk_Sets.csv') as csvfile:
+    data = csv.reader(csvfile)
+    for row in data:
+        if row[0][0] != '#':
+            perk_sets.append(PerkSets(row))
+perks = []
+# Get Perks from CSV
+with open('Destiny_Item_Manager/RecommendedPerks.csv') as csvfile:
+    data = csv.reader(csvfile)
+    for row in data:
+        if row[0][0] != '#':
+            perks.append(Perk(row[0], int(row[1]), int(row[2])))
 # Get Armor from CSV
 armor = []
 with open('Destiny_Item_Manager/destinyArmor.csv') as csvfile:
@@ -90,22 +115,8 @@ with open('Destiny_Item_Manager/destinyArmor.csv') as csvfile:
 
             if arm.tag not in ['Tag', 'favorite']:
                 arm.tag = None
+            arm.Get_Total_Rec_Perks(perks)
             armor.append(arm)
-
-# Get Perk Sets from CSV
-perk_sets = []
-with open('Destiny_Item_Manager/Perk_Sets.csv') as csvfile:
-    data = csv.reader(csvfile)
-    for row in data:
-        if row[0][0] != '#':
-            perk_sets.append(PerkSets(row))
-perks = []
-# Get Perks from CSV
-with open('Destiny_Item_Manager/RecommendedPerks.csv') as csvfile:
-    data = csv.reader(csvfile)
-    for row in data:
-        if row[0][0] != '#':
-            perks.append(Perk(row[0], int(row[1])))
 
 # Update Existing Favorites
 for arm in armor:
@@ -114,7 +125,6 @@ for arm in armor:
             perk.Update(arm)
 
 # Find Perks
-count = 0
 # Find Perk Sets
 maxLen = 0
 for perk_set in perk_sets:
@@ -123,7 +133,6 @@ for perk_set in perk_sets:
     for arm in armor:
         if perk_set.Check(arm.perks):
             arm.tag = 'favorite'
-            count += 1
             for perk in perks:
                 perk.Update(arm)
 
@@ -131,68 +140,40 @@ maxLength = 0
 # Find Keeps
 for perk in perks:
     print(f"\n{perk.perk}")
-    # Find Total Rec Perks for armor with current perk
-    for arm in armor:
-        if arm.tag != 'Tag':
-            arm.total_rec_perks = 0
-            if arm.Check_Perks(perk.perk) and perk.Get_Item_Status(f"{arm.equippable}-{arm.type}"):
-                for p in perks:
-                    if arm.Check_Perks(p.perk):
-                        arm.total_rec_perks += 1
 
-    #Dict to put in the top pieces of armor
-    #by most number of recommended perks
     topArmor = {}
     for x in ['Hunter', 'Warlock', 'Titan']:
         for y in ['Helmet', 'Gauntlets', 'Chest Armor', 'Leg Armor']:
-            topArmor.update({f'{x}-{y}': Armor()})
-    topArmor.update({'Hunter-Hunter Cloak': Armor(),
-                     'Warlock-Warlock Bond': Armor(),
-                     'Titan-Titan Mark': Armor()
+            topArmor.update({f'{x}-{y}': [Armor()]})
+    topArmor.update({'Hunter-Hunter Cloak': [Armor()],
+                     'Warlock-Warlock Bond': [Armor()],
+                     'Titan-Titan Mark': [Armor()]
                      })
 
-    # Get most rec perks
+    # Get armor with most rec perks for the current perk and add to the dict
     for arm in armor:
-        if arm.tag != 'Tag':
-            if arm.total_rec_perks > topArmor[f"{arm.equippable}-{arm.type}"].total_rec_perks:
-                topArmor[f"{arm.equippable}-{arm.type}"] = arm
+        if arm.tag != 'Tag':  # Exclue header row
+            if arm.Check_Perks(perk.perk):  # Check if current perk is on armor
+                key = f'{arm.equippable}-{arm.type}'  # Create dict key
+                # if more rec perks then
+                if arm.total_rec_perks > topArmor[key][0].total_rec_perks:
+                    topArmor[key] = []
+                    topArmor[key].append(arm)  # replace current piece
+                elif arm.total_rec_perks == topArmor[key][0].total_rec_perks:
+                    topArmor[key].append(arm)
 
     for key in topArmor:
-        if topArmor[key].name != '':
-            topArmor[key].tag = 'keep'
-            count += 1
-            for p in perks:
-                p.Update(topArmor[key])
-            topArmor[key].Print_RecPerks(perks)
+        for arm in topArmor[key]:
+            if arm.name != '':
+                arm.tag = 'keep'
+                for p in perks:
+                    p.Update(arm)
+                arm.Print_RecPerks(perks)
 
 # Print Perk Sets
 for perk_set in perk_sets:
     x = maxLen - len(str(perk_set._perks))
     print(f"{perk_set._perks}{' '*x} || {perk_set._count}")
-
-# Print Perks
-for perk in perks:
-    if perk.total != 0:
-        z = maxLength - len(perk.perk)
-        print(f"\n{perk.perk} - {perk.total}")
-        for x in ['Hunter', 'Warlock', 'Titan']:
-            for y in ['Helmet', 'Gauntlets', 'Chest Armor', 'Leg Armor']:
-                key = f"{x}-{y}"
-                if perk._item[key]:
-                    print(f" {key}:{perk._item[key]}")
-
-            if x == 'Hunter':
-                key = f"{x}-Hunter Cloak"
-                if perk._item[key]:
-                    print(f" {key}:{perk._item[key]}")
-            elif x == 'Warlock':
-                key = f"{x}-Warlock Bond"
-                if perk._item[key]:
-                    print(f" {key}:{perk._item[key]}")
-            elif x == 'Titan':
-                key = f"{x}-Titan Mark"
-                if perk._item[key]:
-                    print(f" {key}:{perk._item[key]}")
 
 # Export CSV
 with open('Destiny_Item_Manager/DestinyArmorExport.csv', 'w') as csvfile:
@@ -223,5 +204,10 @@ with open('Destiny_Item_Manager/DestinyArmorExport.csv', 'w') as csvfile:
                        arm.perks[8],
                        arm.perks[9],
                        arm.perks[10]])
+
+count = 0
+for arm in armor:
+    if arm.tag in ['favorite', 'keep']:
+        count += 1
 
 print(f"\nTotal Tagged Armor: {count}")
