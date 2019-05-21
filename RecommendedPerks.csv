@@ -1,6 +1,7 @@
 #Comments can be added using a # as the 1st character
 #Format is:
-#<Perk Name>,<Minimum Items with Perk to keep>
+#<Perk Name>,<Minimum Items with Perk to keep>,<Weight of Perk>
+#Min is currently broken and will only keep a min of 1
 #Helmet
 Precision Weapon Targeting,2,1
 Enhanced Bow Targeting,2,1
