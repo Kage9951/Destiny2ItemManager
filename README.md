@@ -54,4 +54,4 @@ Last thing is that you can manually mark gear as favorite and the script will le
       Click on the down arrow on the character you are on
       Click Transfer Search
       This will move all items left untagged (items to delete) to that character
-      Simply delete items and wait for DIM to refresh and repeat until all unwanted items are gone.
+      Simply dismantle items and wait for DIM to refresh and repeat until all unwanted items are gone.
