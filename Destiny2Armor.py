@@ -125,17 +125,6 @@ for arm in armor:
             perk.Update(arm)
 
 # Find Perks
-# Find Perk Sets
-maxLen = 0
-for perk_set in perk_sets:
-    if len(str(perk_set._perks)) > maxLen:  # Getting max length for formatting purposes
-        maxLen = len(str(perk_set._perks))
-    for arm in armor:
-        if perk_set.Check(arm.perks):
-            arm.tag = 'favorite'
-            for perk in perks:
-                perk.Update(arm)
-
 maxLength = 0
 # Find Keeps
 for perk in perks:
@@ -169,6 +158,17 @@ for perk in perks:
                 for p in perks:
                     p.Update(arm)
                 arm.Print_RecPerks(perks)
+
+# Find Perk Sets
+maxLen = 0
+for perk_set in perk_sets:
+    if len(str(perk_set._perks)) > maxLen:  # Getting max length for formatting purposes
+        maxLen = len(str(perk_set._perks))
+    for arm in armor:
+        if perk_set.Check(arm.perks):
+            arm.tag = 'favorite'
+            for perk in perks:
+                perk.Update(arm)
 
 # Print Perk Sets
 for perk_set in perk_sets:
