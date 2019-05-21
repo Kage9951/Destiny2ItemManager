@@ -48,7 +48,7 @@ Last thing is that you can manually mark gear as favorite and the script will le
       It will say X amount of items updated
       
       From here to mass get rid of gear I use the following query.
-        is\:armor -is\:exotic tag\:none
+        is:armor -is:exotic tag:none
         Click on the down arrow on the character you are on
         Click Transfer Search
         This will move all items left untagged (items to delete) to that character
