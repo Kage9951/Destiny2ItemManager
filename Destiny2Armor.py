@@ -75,6 +75,10 @@ class Perk:
         return self._item[key] < self._min
 
 
+# For Max Power Changes
+maxPower = 700
+# This marks untagged gear at max power as infuse
+
 os.chdir(os.path.dirname(__file__))
 # Get data from CSVs
 # Get Perk Sets from CSV
@@ -171,6 +175,11 @@ for perk_set in perk_sets:
             arm.tag = 'favorite'
             for perk in perks:
                 perk.Update(arm)
+
+# Mark infuse
+for arm in armor:
+    if arm.power == maxPower and arm.tag == None:
+        arm.tag = 'infuse'
 
 # Print Perk Sets
 for perk_set in perk_sets:
