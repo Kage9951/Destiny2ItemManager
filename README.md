@@ -15,15 +15,18 @@ Another thing to note about perks. In DIM the following are an example of what i
 
 This includeds shaders and mods if that interesets you. (I used Riven's Curse as a perk to make sure I always have a full set of revire dawn).
 
+Last thing is that you can manually mark gear as favorite and the script will leave those items untouched.
+
 # Usage
   Youtube Link: <will go here once I make it>
   
   Required Items:
   
     From Github grab the following
-      Perk_Sets.CSV
-      RecommendPerks.CSV
+      Perk_Sets.csv
+      RecommendPerks.csv
       Destiny2ItemManager.py
+      Save these in the same folder
      
     Using Destiny Item Manager(https://app.destinyitemmanager.com/)
       Go to Settings (Gear Icon)
@@ -31,9 +34,22 @@ This includeds shaders and mods if that interesets you. (I used Riven's Curse as
       Click on Armor
       Save file as DestinyArmor.csv
     
-    Move file to location of the python script
+    Move DestinyArmor.csv to location of the python script
+      These should all be in the same folder.
+    
+    Compile and run the script
+    
+    A new file called 'DestinyArmorExport.csv' will be created and in that same folder
   
-  Run the Script
-  
-  Then Drag DestinyArmorExport.csv back into the spreadsheets section of DIM
-  
+    Using DIM again
+      Go to Settings (Gear Icon)
+      Go all the way down to Spreadsheets
+      Drag 'DestinyArmorExport.csv' to the drag and drop box in DIM to import it
+      It will say X amount of items updated
+      
+      From here to mass get rid of gear I use the following query.
+        is\:armor -is\:exotic tag\:none
+        Click on the down arrow on the character you are on
+        Click Transfer Search
+        This will move all items left untagged (items to delete) to that character
+        Simply delete items and wait for DIM to refresh and repeat until all unwanted items are gone.
