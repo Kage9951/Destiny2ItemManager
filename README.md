@@ -1,5 +1,5 @@
 # Destiny2ItemManager
-Is your vault filled with the brim with armor? Looking for a way to quickly sort through it all? Look no further because this is the solution for you! 
+Is your vault filled to the brim with armor? Looking for a way to quickly sort through it all? Look no further because this is the solution for you! 
 
 Over the past Season of the Drifter with all the new armor added I was looking for a way to easily optimize my inventory. I decided  to make my own script to manage it. This started in powershell and later moved to python. This was meant to help introduce me to python and yes my code may be a bit sloppy due to it.
 
