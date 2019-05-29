@@ -1,5 +1,4 @@
 import csv
-import os
 
 
 class Armor:
@@ -79,7 +78,6 @@ class Perk:
 maxPower = 700
 # This marks untagged gear at max power as infuse
 
-os.chdir(os.path.dirname(__file__))
 # Get data from CSVs
 # Get Perk Sets from CSV
 perk_sets = []
