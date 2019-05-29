@@ -187,34 +187,15 @@ for perk_set in perk_sets:
     print(f"{perk_set._perks}{' '*x} || {perk_set._count}")
 
 # Export CSV
-with open('DestinyArmorExport.csv', 'w') as csvfile:
+with open('DestinyArmorExport.csv', 'w', newline='') as csvfile:
     data = csv.writer(csvfile)
     for arm in armor:
-        data.writerow([arm.name,
-                       arm.hash,
-                       arm.id,
-                       arm.tag,
-                       arm.tier,
-                       arm.type,
-                       arm.equippable,
-                       arm.power,
-                       arm.masterworkType,
-                       arm.masterworkTier,
-                       arm.mobility,
-                       arm.recovery,
-                       arm.resilience,
-                       arm.notes,
-                       arm.perks[0],
-                       arm.perks[1],
-                       arm.perks[2],
-                       arm.perks[3],
-                       arm.perks[4],
-                       arm.perks[5],
-                       arm.perks[6],
-                       arm.perks[7],
-                       arm.perks[8],
-                       arm.perks[9],
-                       arm.perks[10]])
+        data.writerow([
+            arm.hash,
+            arm.id,
+            arm.tag,
+            arm.notes
+        ])
 
 count = 0
 for arm in armor:
